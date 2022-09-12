@@ -1,12 +1,13 @@
 # fantasyFootball
 ml for fantasy football draft.
 
-Trained four XGB models for RB, QB, WR, TE using nfl_data_py data.
-The process begins with data cleaning to remove non-active players,
-removed 85% correlated feature,
-each model has different features.
-a wrapper like  feature selection on permutated feature sets,
-Then I used 5-fold CV hyperparameter tuning, 10-fold CV validation.
-The final model use 5 years data 2016, 2017, 2018, 2019, 2020 to predict 2021 fantasy score ppr.
-The performance of the QB model MAE is around 4.66.
-Future improved would include the rookie data, kicker model, and defense team model.
+
+* The final model use 5 years data 2016, 2017, 2018, 2019, 2020 to predict 2021 fantasy score ppr.
+* The process begins with data cleaning to remove non-active or injured player matches.
+* Each model RB, QB, WR, TE has different features. I removed 85% correlated feature.
+* I used a wrapper like  feature selection on permutated feature sets.
+* Then I used 5-fold CV hyperparameter tuning, 10-fold CV validation.
+* The performance of the QB model MAE is around 4.66.
+* Find the highest median prediction as ranking.  This ensures good performance and take into account of outliers.
+* Then matches to current year 2022 player matches. Ignore players that changed teams because situation changes.  
+* Did not use rookie data, kicker data, and defense team data.  Those data are not available in this data.  It could be included in the future.
